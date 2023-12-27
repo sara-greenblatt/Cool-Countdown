@@ -1,0 +1,51 @@
+.countdown-container {
+  padding: 0 28px 15px;
+  margin-top: 15px;
+
+  .completion-text-box {
+    margin: 3px 0 8px;
+    display: flex;
+    justify-content: space-between;
+
+    .dummy-icons {
+      display: flex;
+      width: 20%;
+      justify-content: space-between;
+
+      .stop {
+        opacity: 0.5;
+        font-size: 10px;
+      }
+      .close {
+        font-size: 12px;
+        opacity: 0.3;
+      }
+      span {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .transform-details {
+    font-size: 12px;
+    .transform-val {
+      color: #678ee9;
+    }
+  }
+  .event-details {
+    line-height: 1.5;
+  }
+}
+
+.countdown-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5px;
+  &-text {
+    font-size: 12px;
+  }
+  &-icon {
+    height: 18px;
+  }
+}

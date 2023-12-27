@@ -1,0 +1,55 @@
+.main-container {
+    font-family: Segoe UI;
+    height: fit-content;
+    width: 450px;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: rgb(79, 77, 77) 1px solid;
+    position: relative;
+    margin: auto;
+    margin-top: 5%;
+
+    .footer {
+        border-top: 1px solid rgb(214, 205, 205);
+        padding: 5px 20px;
+
+        .details-switcher {
+            display: flex;
+            cursor: pointer;
+            .toggle {
+                opacity: 0.8;
+                width: 30px;
+                height: auto;
+                line-height: 1;
+                &.expand {
+                    transform: rotate(180deg);
+                }
+            }
+            .toggle-text {
+                align-self: center;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .screen-icons {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        button {
+            padding: 5px 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .maximize {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+        .close:hover {
+            background-color: rgb(239 90 102);
+        }
+    }
+}

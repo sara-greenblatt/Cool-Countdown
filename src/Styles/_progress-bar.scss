@@ -1,0 +1,93 @@
+@keyframes progressAnimation {
+    0% {
+        background-position: 200px 0;
+    }
+    100% {
+        background-position: -200px 0;
+    }
+}
+
+.simple-progress-bar {
+    position: relative;
+    height: 16px;
+    background-color: rgb(230 230 230);
+    border: rgb(189, 188, 188) 0.5px solid;
+    border-radius: 1px;
+
+    .completed-view {
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(
+            to left,
+            rgba(6, 176, 37, 0.2) 0%,
+            rgba(6, 176, 37, 1) 40%,
+            rgba(6, 176, 37, 0.2) 100%
+        );
+        background-position: 200px;
+        animation: progressAnimation 10s linear infinite 1s;
+    }
+}
+
+@keyframes congratsAnimation {
+    0% {
+        top: 70%;
+    }
+
+    20% {
+        top: 40%;
+    }
+
+    40% {
+        top: 50%;
+    }
+    100% {
+        top: 40%;
+    }
+}
+
+.wide-progress-bar {
+    position: relative;
+    height: 72px;
+    background-color: #ffffff;
+    /* a linear gradient pattern for the thin gray lines */
+    background-image: linear-gradient(90deg, #edebf1 1px, transparent 1px),
+        linear-gradient(0deg, #edebf1 1px, transparent 1px);
+    background-size: 40px 15px;
+    border: 1px solid rgb(33, 41, 145);
+    margin-bottom: 10px;
+
+    .wide-completed-view {
+        position: absolute;
+        height: 72px;
+        background-color: rgb(167 229 145);
+        background-image: linear-gradient(90deg, rgb(121, 199, 93) 0.3px, transparent 1px),
+            linear-gradient(0deg, rgb(113, 201, 81) 0.3px, transparent 1px);
+        background-size: inherit;
+    }
+
+    .chart {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        --mask: radial-gradient(52.48px at 50% 72px, #000 99%, #0000 101%) calc(50% - 90px) 0/180px 100%,
+            radial-gradient(52.48px at 50% -27px, #0000 99%, #000 101%) 50% 45px/180px 100% repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+        &-completed {
+            background-color: #06b025;
+        }
+    }
+
+    .animated-congrats {
+        position: absolute;
+        z-index: 1;
+        font-size: 12px;
+        left: 0;
+        top: 10%;
+        padding: 0 0 2px 5px;
+        border-bottom: 1.5px solid #000;
+        width: calc(100% - 5px);
+        text-align: left;
+        animation: congratsAnimation 10s linear infinite alternate;
+    }
+}
