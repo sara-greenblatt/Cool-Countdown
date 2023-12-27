@@ -1,8 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CountdownContainer } from '../index';
+import { getConfetti } from './ConfettiUtils';
 
 export default function MainContainer() {
     const [isWideMode, setWideMode] = useState(true);
+
+    useEffect(() => {
+        getConfetti();
+        const confettiInterval = setInterval(() => {
+            getConfetti();
+        }, 5000);
+        return () => clearInterval(confettiInterval);
+    }, []);
 
     const toggleWideMode = () => {
         setWideMode(!isWideMode);
