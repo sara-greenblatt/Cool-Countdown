@@ -1,6 +1,4 @@
-import { confetti } from "https://cdn.jsdelivr.net/npm/tsparticles-confetti/+esm";
-
-export const getConfetti = () => {
+export const getConfetti = (confetti: any) => {
     const defaults = {
         spread: 360,
         ticks: 100,

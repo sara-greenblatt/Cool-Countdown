@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { CountdownContainer } from '../index';
 import { getConfetti } from './ConfettiUtils';
+import { confetti } from 'tsparticles-confetti';
 
 export default function MainContainer() {
     const [isWideMode, setWideMode] = useState(true);
 
     useEffect(() => {
-        getConfetti();
+        getConfetti(confetti);
         const confettiInterval = setInterval(() => {
-            getConfetti();
+            getConfetti(confetti);
         }, 5000);
         return () => clearInterval(confettiInterval);
     }, []);
