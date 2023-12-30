@@ -16,7 +16,7 @@ export const CountdownContainer = (props: Props) => {
     const getRemainingTime = (): number => {
         const eventDate = +new Date(REACT_APP_EVENT_DATE as string);
         const currentDate = +new Date();
-        return Math.abs(eventDate - currentDate);
+        return Math.abs((eventDate - currentDate) || 0);
     };
 
     const getTotalTime = () => {
@@ -26,13 +26,13 @@ export const CountdownContainer = (props: Props) => {
     }
 
     const calcCompletionInPercents = (): number => {
-        return 1 - (getRemainingTime() / getTotalTime());
+        return 1 - ((getRemainingTime() / getTotalTime()) || 0);
     };
 
     const completionTxt = `${(calcCompletionInPercents() * 100).toFixed(0)}%`;
 
     React.useEffect(() => {
-        window.document.title = completionTxt+ " Completed";
+        window.document.title = completionTxt + " Completed";
     }, [completionTxt]);
 
     return (
@@ -56,7 +56,7 @@ export const CountdownContainer = (props: Props) => {
                 </div>
                 <div className='completion-text-box'>
                     <span className='completion-text'>
-                        {completionTxt+ " הושלמו"}
+                        {completionTxt + " הושלמו"}
                     </span>
                     <span className='dummy-icons'>
                         <span className='stop'>&#124; &#124;</span>

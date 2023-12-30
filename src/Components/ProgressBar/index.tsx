@@ -7,7 +7,6 @@ type Props = {
 export const ProgressBar = (props: Props) => {
     const { completedPercents, isWideMode } = props;
 
-
     const wideProgressBar = () => {
         const { REACT_APP_EVENT_CONGRATS } = process.env || {};
         return (
@@ -32,5 +31,4 @@ export const ProgressBar = (props: Props) => {
     return isWideMode
         ? wideProgressBar()
         : simpleProgressBar()
-
 };
