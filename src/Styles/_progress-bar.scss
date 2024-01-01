@@ -33,15 +33,13 @@
         top: 70%;
     }
 
-    20% {
+    20%,
+    100% {
         top: 40%;
     }
 
     40% {
         top: 50%;
-    }
-    100% {
-        top: 40%;
     }
 }
 
@@ -69,10 +67,8 @@
         width: 100%;
         position: absolute;
         height: 100%;
-        --mask: radial-gradient(52.48px at 50% 72px, #000 99%, #0000 101%) calc(50% - 90px) 0/180px 100%,
-            radial-gradient(52.48px at 50% -27px, #0000 99%, #000 101%) 50% 45px/180px 100% repeat-x;
-        -webkit-mask: var(--mask);
-        mask: var(--mask);
+        clip-path: polygon(100% 100%, 0% 100%, 0 55%, 25% 45%, 50% 55%, 75% 45%, 100% 55%);
+
         &-completed {
             background-color: #06b025;
         }

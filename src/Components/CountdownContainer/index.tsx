@@ -9,8 +9,8 @@ type Props = {
 export const CountdownContainer = (props: Props) => {
     const { isWideMode } = props;
     const {
-        REACT_APP_EVENT_DATE, REACT_APP_STARTING_DATE,
-        REACT_APP_EVENT_SOURCE, REACT_APP_EVENT_TARGET
+        REACT_APP_EVENT_DATE = null, REACT_APP_STARTING_DATE = null,
+        REACT_APP_EVENT_SOURCE = '', REACT_APP_EVENT_TARGET = ''
     } = process.env;
 
     const getRemainingTime = (): number => {
