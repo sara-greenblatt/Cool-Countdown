@@ -21,7 +21,7 @@
                 width: 30px;
                 height: auto;
                 line-height: 1;
-                &.expand {
+                &.collapse {
                     transform: rotate(180deg);
                 }
             }
@@ -34,7 +34,7 @@
 
     .screen-icons {
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
 
         button {

@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { ProgressBar } from '../index';
 import { CountdownDetails } from './CountdownDetails';
+import { FormattedMessage, IntlShape, injectIntl } from 'react-intl';
 
 type Props = {
-    isWideMode: boolean
+    isWideMode: boolean,
+    intl: IntlShape
 };
 
-export const CountdownContainer = (props: Props) => {
-    const { isWideMode } = props;
+const CountdownContainerComponent = (props: Props) => {
+    const { isWideMode, intl } = props;
     const {
         REACT_APP_EVENT_DATE = null, REACT_APP_STARTING_DATE = null,
         REACT_APP_EVENT_SOURCE = '', REACT_APP_EVENT_TARGET = ''
@@ -32,7 +34,7 @@ export const CountdownContainer = (props: Props) => {
     const completionTxt = `${(calcCompletionInPercents() * 100).toFixed(0)}%`;
 
     React.useEffect(() => {
-        window.document.title = completionTxt + " Completed";
+        window.document.title = completionTxt + " complete";
     }, [completionTxt]);
 
     return (
@@ -44,19 +46,19 @@ export const CountdownContainer = (props: Props) => {
                     className='countdown-note-icon'
                 />
                 <span className='countdown-note-text'>
-                    {completionTxt + " הושלמו"}
+                    {intl.formatMessage({ id: "completedTxt" }, { percents: completionTxt })}
                 </span>
             </div>
             <div className="countdown-container">
                 <div className="transform-details">
-                    <span className="transform-txt">מעביר מ- </span>
+                    <span className="transform-txt"><FormattedMessage id="transferFrom" /></span>
                     <span className="transform-val">{REACT_APP_EVENT_SOURCE}</span>
-                    <span className="transform-txt"> אל </span>
+                    <span className="transform-txt"><FormattedMessage id="transferTo" /></span>
                     <span className="transform-val">{REACT_APP_EVENT_TARGET}</span>
                 </div>
                 <div className='completion-text-box'>
                     <span className='completion-text'>
-                        {completionTxt + " הושלמו"}
+                        {intl.formatMessage({ id: "completedTxt" }, { percents: completionTxt })}
                     </span>
                     <span className='dummy-icons'>
                         <span className='stop'>&#124; &#124;</span>
@@ -73,3 +75,5 @@ export const CountdownContainer = (props: Props) => {
         </>
     );
 };
+
+export const CountdownContainer = injectIntl(CountdownContainerComponent);

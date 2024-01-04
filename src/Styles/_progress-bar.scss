@@ -78,12 +78,11 @@
         position: absolute;
         z-index: 1;
         font-size: 12px;
-        left: 0;
         top: 10%;
-        padding: 0 0 2px 5px;
+        padding: 0 5px 2px 0;
+        text-align: right;
         border-bottom: 1.5px solid #000;
         width: calc(100% - 5px);
-        text-align: left;
         animation: congratsAnimation 10s linear infinite alternate;
     }
 }

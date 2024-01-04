@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
+
 type Props = {
     remainingTime: number
 };
@@ -14,16 +16,21 @@ export const CountdownDetails = (props: Props) => {
     return (
         <div className='transform-details'>
             <div className='event-details'>
-                <span>שם: </span>
+                <span><FormattedMessage id="name" /></span>
                 <span>{REACT_APP_BRAND_NAME || ''}</span>
             </div>
             <div className='event-details'>
-                <span>זמן שנותר: </span>
-                <span>{`${getRemainingDays()} ימים`}</span>
+                <span><FormattedMessage id="remainingTime" /></span>
+                <span>
+                    <FormattedMessage
+                        id="remainingTimeVal"
+                        values={{ days: getRemainingDays() }}
+                    />
+                </span>
             </div>
             <div>
-                <span>פריטים שנותרו: </span>
-                <span>1 (1 בתים)</span>
+                <span><FormattedMessage id="itemsLeft" /> </span>
+                <span><FormattedMessage id="itemsLeftDefaultVal" /></span>
             </div>
         </div>
     );
