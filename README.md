@@ -5,8 +5,7 @@ countdown in 2 minutes by changing the environment variables.
 ###
 [Demo](https://react-cool-explorer-countdown.vercel.app/).
 ###
-Preview:
-###
+Preview:  
 ![full details](./public/demo_full_details.png)
 ![collapsed details](./public/demo_collaped_details.png)
 # Setup
