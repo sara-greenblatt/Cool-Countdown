@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { CountdownContainer } from '../index';
 import { getConfetti } from './ConfettiUtils';
 import { confetti } from 'tsparticles-confetti';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import { intlConfig } from '../../Translation';
 
-export default function MainContainer() {
+const MainContainerComponent = () => {
     const [isWideMode, setWideMode] = useState(true);
 
     useEffect(() => {
@@ -23,8 +25,10 @@ export default function MainContainer() {
         window.close();
     };
 
+    const supportRTL = intlConfig.isRTL() ? ' right-to-left' : '';
+
     return (
-        <div className='main-container'>
+        <div className={`main-container${supportRTL}`}>
             <div className='screen-icons'>
                 <button>&#8211;</button>
                 <button className='maximize'>&#128470;</button>
@@ -39,17 +43,21 @@ export default function MainContainer() {
                                 src={require("../../Assets/Icons/collapse_expand.jpg")}
                                 alt="collapse"
                                 onClick={toggleWideMode}
-                                className='toggle expand'
+                                className='toggle'
                             />
-                            <span className='toggle-text'>פחות פרטים</span>
+                            <span className='toggle-text'>
+                                <FormattedMessage id="lessDetails" />
+                            </span>
                         </>
                         : <>
                             <img
                                 src={require("../../Assets/Icons/collapse_expand.jpg")}
                                 alt="expand"
-                                className='toggle'
+                                className='toggle collapse'
                             />
-                            <span className='toggle-text'>פרטים נוספים</span>
+                            <span className='toggle-text'>
+                                <FormattedMessage id="moreDetails" />
+                            </span>
                         </>
                     }
                 </div>
@@ -57,3 +65,6 @@ export default function MainContainer() {
         </div>
     )
 };
+
+
+export const MainContainer = injectIntl(MainContainerComponent);

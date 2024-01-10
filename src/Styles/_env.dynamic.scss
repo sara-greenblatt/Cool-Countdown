@@ -1,0 +1,19 @@
+// support right to left view
+
+.main-container {
+    &.right-to-left {
+        direction: rtl;
+        .screen-icons {
+            right: unset;
+            left: 0;
+        }
+        .countdown-note {
+            right: 0;
+        }
+        .wide-progress-bar .animated-congrats {
+            text-align: left;
+            padding-left: 5px;
+            padding-right: 0;
+        }
+    }
+}

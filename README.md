@@ -1,4 +1,4 @@
-# Slider Event Countdown
+# Explorer Event Countdown
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Cool countdown for your event!!
 ##

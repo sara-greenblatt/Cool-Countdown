@@ -1,0 +1,14 @@
+{
+    "name": "שם: ",
+    "remainingTime": "זמן שנותר: ",
+    "remainingTimeVal": "{days} ימים",
+    "itemsLeft": "פריטים שנותרו: ",
+    "itemsLeftDefaultVal": "1 (1 בתים)",
+    "transferFrom": "מעביר מ- ",
+    "transferTo": " אל ",
+    "completedTxt": "{percents} הושלמו",
+    "expandDetails": "הרחב פרטים",
+    "collapseDetails": "כווץ פרטים",
+    "lessDetails": "פחות פרטים",
+    "moreDetails": "פרטים נוספים"
+}

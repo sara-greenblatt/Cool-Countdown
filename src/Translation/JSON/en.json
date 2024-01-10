@@ -1,0 +1,13 @@
+{
+  "name": "Name: ",
+  "remainingTime": "Time remaining: ",
+  "remainingTimeVal": "{days} days",
+  "itemsLeft": "Items Left: ",
+  "itemsLeftDefaultVal": "1 (1 bytes)",
+  "transferFrom": "Moving from: ",
+  "transferTo": " to ",
+  "completed": "complete",
+  "lessDetails": "Fewer details",
+  "moreDetails": "More details",
+  "completedTxt": "{percents} complete"
+}

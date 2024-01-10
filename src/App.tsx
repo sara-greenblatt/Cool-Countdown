@@ -1,10 +1,18 @@
-import React from 'react';
 import './index.scss';
-import MainContainer from './Components/MainContainer';
+import { MainContainer } from './Components';
+import { IntlProvider } from 'react-intl';
+import { intlConfig } from './Translation';
 
 function App() {
+  const locale: string = intlConfig.getLocale();
+
   return (
-    <MainContainer />
+    <IntlProvider
+      locale={locale}
+      messages={intlConfig.messages[locale]}
+    >
+      <MainContainer />
+    </IntlProvider>
   );
 }
 
