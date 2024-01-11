@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Sara Greenblatt",
-    "email": "s7182262@gmail.com"
+    "name": "Sara Greenblatt"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
