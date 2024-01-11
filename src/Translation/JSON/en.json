@@ -2,7 +2,7 @@
   "name": "Name: ",
   "remainingTime": "Time remaining: ",
   "remainingTimeVal": "{days} days",
-  "itemsLeft": "Items Left: ",
+  "itemsLeft": "Items remaining: ",
   "itemsLeftDefaultVal": "1 (1 bytes)",
   "transferFrom": "Moving from: ",
   "transferTo": " to ",
