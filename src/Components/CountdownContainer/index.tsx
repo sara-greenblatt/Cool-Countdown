@@ -18,13 +18,14 @@ const CountdownContainerComponent = (props: Props) => {
     const getRemainingTime = (): number => {
         const eventDate = +new Date(REACT_APP_EVENT_DATE as string);
         const currentDate = +new Date();
-        return Math.abs((eventDate - currentDate) || 0);
+        const timeLeft = Math.round((eventDate - currentDate) || 0);
+        return timeLeft >= 0 ? timeLeft : 0;
     };
 
     const getTotalTime = () => {
         const eventDate = +new Date(REACT_APP_EVENT_DATE as string);
         const startingDate = +new Date(REACT_APP_STARTING_DATE as string);
-        return Math.abs(eventDate - startingDate);
+        return Math.round(eventDate - startingDate);
     }
 
     const calcCompletionInPercents = (): number => {
