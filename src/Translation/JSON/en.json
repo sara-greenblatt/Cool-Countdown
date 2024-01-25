@@ -4,7 +4,7 @@
   "remainingTimeVal": "{days} days",
   "itemsLeft": "Items Left: ",
   "itemsLeftDefaultVal": "1 (1 bytes)",
-  "transferFrom": "Moving from: ",
+  "transferFrom": "Moving from ",
   "transferTo": " to ",
   "completed": "complete",
   "lessDetails": "Fewer details",
