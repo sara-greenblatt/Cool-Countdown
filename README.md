@@ -8,7 +8,7 @@ countdown in 2 minutes by changing the environment variables.
 Preview:  
 ![full details](./public/demo_full_details.png)
 ![collapsed details](./public/demo_collaped_details.png)
-# Setup
+# Setupdwwd
 1. Set environment varaibles  
     Create .env file in the root folder  
     Add the below environment variables:  
